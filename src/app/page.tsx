@@ -15,6 +15,9 @@ export default async function Home() {
 }
 
 async function getData(){
+  if(!process.env.NEXT_PUBLIC_API_URL){
+    return null;
+  }
   try {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`)
   if (!res.ok) {
