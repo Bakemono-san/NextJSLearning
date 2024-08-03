@@ -15,7 +15,15 @@ export default async function Home() {
 }
 
 async function getData(){
+  try {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`)
+  if (!res.ok) {
+    throw new Error(`HTTP error! status: ${res.status}`);
+  }
   const posts = await res.json()
   return posts
+} catch (error) {
+  console.error('Fetch error:', error);
+  return null; // or handle error appropriately
+}
 }
