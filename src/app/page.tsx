@@ -15,7 +15,7 @@ export default async function Home() {
 }
 
 async function getData(){
-  const res = await fetch('http://localhost:3000/api/posts')
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`)
   const posts = await res.json()
   return posts
 }
