@@ -1,7 +1,21 @@
-export default function Home() {
+import PostContainer, { PostContainerProps } from "@/components/PostContainer";
+import StatusContainer from "@/components/StatusContainer";
+import { Post } from "../../utils/type";
+
+export default async function Home() {
+  const posts = await getData();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-white">Edited starting template</h1>
+    <main className="flex flex-col w-full gap-16 py-12 px-52 ml-[250px]">
+      <StatusContainer />
+      <div className="flex justify-center overflow-y-scroll">
+        <PostContainer posts={posts}/>
+      </div>
     </main>
   );
+}
+
+async function getData(){
+  const res = await fetch('http://localhost:3000/api/posts')
+  const posts = await res.json()
+  return posts
 }

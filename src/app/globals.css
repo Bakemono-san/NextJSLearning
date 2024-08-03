@@ -5,3 +5,16 @@
 .nav-link{
   @apply px-2 py-1 text-
 } */
+
+.postImage{
+  width: 468px;
+  height: 468px;
+}
+
+.postCard{
+  width: 468px;
+}
+
+body section:last-of-type{
+  margin-left: 250px;
+}

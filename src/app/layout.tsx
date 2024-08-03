@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
 import "./globals.css";
+import SideMenu from "@/components/SideMenu";
 
 export default function RootLayout({
   children,
@@ -8,8 +8,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-800">
-        <Header />
+      <body className=" flex">
+        <SideMenu />
         {children}
         </body>
     </html>
