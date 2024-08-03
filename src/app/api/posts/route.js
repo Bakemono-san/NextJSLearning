@@ -1,4 +1,5 @@
 // app/api/posts/route.js
+
 let posts = [
   {
     username: "bakemono",
@@ -40,7 +41,12 @@ let posts = [
 
 export async function GET(request) {
   return new Response(JSON.stringify(posts), {
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*", // Adjust as needed
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
   });
 }
 
@@ -49,7 +55,12 @@ export async function POST(request) {
   posts.push({ ...newPost, id: posts.length + 1 }); // Ajoute un nouvel identifiant unique
   return new Response(JSON.stringify(newPost), {
     status: 201,
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*", // Adjust as needed
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
   });
 }
 
@@ -59,12 +70,35 @@ export async function PUT(request) {
     post.id === updatedPost.id ? updatedPost : post
   );
   return new Response(JSON.stringify(updatedPost), {
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*", // Adjust as needed
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
   });
 }
 
 export async function DELETE(request) {
   const { id } = await request.json();
   posts = posts.filter((post) => post.id !== id);
-  return new Response(null, { status: 204 });
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": "*", // Adjust as needed
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
+}
+
+export async function OPTIONS(request) {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": "*", // Adjust as needed
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
 }
