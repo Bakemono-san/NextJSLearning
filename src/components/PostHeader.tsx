@@ -12,7 +12,7 @@ export default function PostHeader({username,profile,timeElapsed,id}: Readonly<{
             </span>
         </Link>
         <div>
-            <p>...</p>
+            <p className='text-3xl'>...</p>
         </div>
     </div>
   )

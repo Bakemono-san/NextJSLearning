@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-800 flex">
+      <body className=" flex">
         <SideMenu />
         {children}
         </body>

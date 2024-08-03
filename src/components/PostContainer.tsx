@@ -22,6 +22,7 @@ export interface PostContainerProps {
             <PostFooter 
               likes={post.likes} 
             />
+            <hr />
           </div>
         ))}
       </div>

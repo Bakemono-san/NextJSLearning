@@ -14,3 +14,7 @@
 .postCard{
   width: 468px;
 }
+
+body section:last-of-type{
+  margin-left: 250px;
+}

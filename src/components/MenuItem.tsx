@@ -15,9 +15,9 @@ export default function MenuItem({
   return (
     <Link
       href={href}
-      className="flex items-center gap-4 text-gray-500 hover:text-gray-900 hover:bg-gray-500 px-2 py-3 mb-2 rounded"
+      className="flex items-center gap-4 text-gray-800 hover:text-gray-900 hover:bg-gray-100 px-2 py-3 mb-2 rounded group"
     >
-      <FontAwesomeIcon icon={iconName} className="w-6" />
+      <FontAwesomeIcon icon={iconName} className="w-6 group-hover:scale-105" />
       <p>{title}</p>
     </Link>
   );
