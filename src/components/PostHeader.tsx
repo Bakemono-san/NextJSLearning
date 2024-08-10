@@ -6,7 +6,7 @@ export default function PostHeader({username,profile,timeElapsed,id}: Readonly<{
   return (
     <div className='p-1 flex items-center justify-between'>
         <Link href={'/profile/'+id} className='flex gap-4 items-center'>
-            <Image src={profile} width={200} height={200} alt='post'className='w-6 h-6 sm:w-10 sm:h-10 rounded-full'/>
+            <Image src={profile} width={200} height={200} alt='post'className='w-6 h-6 sm:w-10 sm:h-10 rounded-full object-fill'/>
             <span className='flex gap-2'>
                 <strong>{username}</strong>
                 <span>{timeElapsed}</span>

@@ -24,7 +24,7 @@ export interface PostContainerProps {
               likes={post.likes} 
             /> */}
 
-            <Image src={post.image} width={200} height={200} alt='profile' className='postImage' />
+            <Image src={post.image} width={200} height={200} quality={100} alt='profile' className='postImage  object-cover' />
             <hr />
           </div>
         ))}
