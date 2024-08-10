@@ -2,6 +2,7 @@ import React from 'react'
 import PostHeader from './PostHeader'
 import PostFooter from './PostFooter'
 import { Post } from '../../utils/type';
+import Image from 'next/image';
 
 export interface PostContainerProps {
     posts: Post[];
@@ -9,7 +10,7 @@ export interface PostContainerProps {
 
   const PostContainer: React.FC<PostContainerProps> = ({ posts }) => {
     return (
-      <div className='flex flex-col gap-10 self-center'>
+      <div className='flex flex-col gap-10'>
         {posts.map((post:Post) => (
           <div key={post.id} className='w-full flex flex-col gap-2'>
             <PostHeader 
@@ -18,10 +19,12 @@ export interface PostContainerProps {
               timeElapsed={post.timeElapsed} 
               id={post.id}
             />
-            <img src={post.image} alt="Post image" className='postImage'/>
+            {/* <img src={post.image} alt="Post image" className='postImage'/>
             <PostFooter 
               likes={post.likes} 
-            />
+            /> */}
+
+            <Image src={post.image} width={200} height={200} alt='profile' className='postImage' />
             <hr />
           </div>
         ))}

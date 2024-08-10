@@ -15,10 +15,10 @@ export default function MenuItem({
   return (
     <Link
       href={href}
-      className="flex items-center gap-4 text-gray-800 hover:text-gray-900 hover:bg-gray-100 px-2 py-3 mb-2 rounded group"
+      className="flex items-center gap-4 text-gray-800 hover:text-gray-900 hover:bg-gray-100 px-2 py-3 mb-2 rounded group w-max"
     >
-      <FontAwesomeIcon icon={iconName} className="w-6 group-hover:scale-105" />
-      <p>{title}</p>
+      <FontAwesomeIcon icon={iconName} className="!w-6 h-6 group-hover:scale-105" />
+      <p className="hidden md:flex">{title}</p>
     </Link>
   );
 }

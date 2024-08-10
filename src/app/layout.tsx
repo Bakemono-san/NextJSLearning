@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className=" flex">
+      <body className="flex-col h-dvh sm:flex sm:flex-row">
         <SideMenu />
         {children}
         </body>

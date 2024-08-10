@@ -8,9 +8,9 @@ export default async function Home() {
   }
   const posts = await getData();
   return (
-    <main className="flex flex-col w-full gap-16 py-12 px-52 ml-[250px]">
+    <main className="flex flex-col gap-16 py-12 px-8 w-full sm:px-18 md:px-24 lg:px-32 xl:px-44 items-center overflow-y-scroll">
       <StatusContainer />
-      <div className="flex justify-center overflow-y-scroll">
+      <div className="flex justify-center">
         <PostContainer posts={posts}/>
       </div>
     </main>
